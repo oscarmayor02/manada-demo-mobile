@@ -395,29 +395,12 @@ main{padding:24px 26px 40px;}
 .worldmap-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px;position:relative;}
 
 .entry-right{position:sticky;top:30px;}
-.mobile-auth-intro{display:none;}
 .entry-right .auth-card{box-shadow:0 20px 45px -22px rgba(46,38,32,.3);}
-.mobile-cta-wrap{display:none;}
-.mobile-back-btn{display:none;}
 
-#device-root.mobile .entry-body{grid-template-columns:1fr;gap:34px;padding:30px 18px 60px;}
-#device-root.mobile .entry-left{display:block;}
-#device-root.mobile .entry-left.mobile-hidden{display:none;}
+#device-root.mobile .entry-body{grid-template-columns:1fr;gap:34px;padding:30px 18px 50px;}
 #device-root.mobile .entry-h1{font-size:21px;}
 #device-root.mobile .entry-top{padding:12px 18px;}
-#device-root.mobile .entry-right{position:static;width:100%;max-width:340px;margin:0 auto;display:none;}
-#device-root.mobile .entry-right.show{display:block;}
-#device-root.mobile .mobile-cta-wrap{display:block;margin-top:26px;}
-#device-root.mobile .mobile-back-btn{
-  display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--ink-soft);
-  margin-bottom:16px;cursor:pointer;
-}
-#device-root.mobile .mobile-back-btn svg{width:16px;height:16px;}
-#device-root.mobile .mobile-auth-intro{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:22px;}
-#device-root.mobile .mobile-auth-intro .logo-mark{width:52px;height:52px;border-radius:16px;margin-bottom:14px;}
-#device-root.mobile .mobile-auth-intro .logo-mark svg{width:26px;height:26px;padding:0;}
-#device-root.mobile .mobile-auth-intro h2{font-size:19px;font-weight:800;margin-bottom:4px;}
-#device-root.mobile .mobile-auth-intro p{font-size:12.5px;color:var(--ink-soft);}
+#device-root.mobile .entry-right{position:static;}
 #device-root.mobile .collage .photo-card{width:88px;}
 #device-root.mobile .collage .photo-slot{height:88px;}
 #device-root.mobile .collage .cg2{width:96px;}
@@ -491,19 +474,9 @@ main{padding:24px 26px 40px;}
         <div><div class="num">52K</div><div class="lbl">mascotas registradas</div></div>
         <div><div class="num">1,240</div><div class="lbl">fundaciones aliadas</div></div>
       </div>
-
-      <div class="mobile-cta-wrap">
-        <button class="btn btn-blue auth-submit" onclick="showMobileAuth()">Iniciar sesión o crear cuenta</button>
-      </div>
     </div>
 
     <div class="entry-right">
-      <div class="mobile-back-btn" onclick="showMobileLanding()"><svg><use href="#ic-back"/></svg>Volver</div>
-      <div class="mobile-auth-intro">
-        <div class="logo-mark"><svg><use href="#paw"/></svg></div>
-        <h2>Bienvenido a Manada</h2>
-        <p>Tu comunidad de mascotas, cerca de ti</p>
-      </div>
       <div class="auth-card">
         <div class="auth-tabs">
           <button class="on" id="tab-login" onclick="showAuth('login')">Iniciar sesión</button>
@@ -1302,16 +1275,6 @@ function pickType(t){
   signupType = t;
   document.getElementById('pick-dueno').classList.toggle('on', t==='dueno');
   document.getElementById('pick-fundacion').classList.toggle('on', t==='fundacion');
-}
-function showMobileAuth(){
-  document.querySelector('.entry-right').classList.add('show');
-  document.querySelector('.entry-left').classList.add('mobile-hidden');
-  window.scrollTo(0,0);
-}
-function showMobileLanding(){
-  document.querySelector('.entry-right').classList.remove('show');
-  document.querySelector('.entry-left').classList.remove('mobile-hidden');
-  window.scrollTo(0,0);
 }
 function showAuth(tab){
   const isLogin = tab==='login';
